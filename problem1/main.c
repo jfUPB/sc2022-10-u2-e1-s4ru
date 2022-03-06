@@ -55,9 +55,24 @@ void getArray(struct array *parr)
     }
 }
 
-void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
+void arrayCommon(struct array *arregloIn1, struct array *arregloIn2, struct array *arregloOut)
 {
-    
+    int size;
+    arregloOut->size = 0; 
+
+
+    if(arregloIn1->size>arregloIn2->size)
+    {
+        size = arregloIn1->size;
+    }
+    else if(arregloIn2->size>arregloIn1->size)
+    {
+        size = arregloIn2->size;
+    }
+    else if(arregloIn2->size == arregloIn1->size)
+    {
+        size = arregloIn2->size;
+    }
 }
 
 void freeMemory(struct array *arr1, struct array *arr2, struct array *arr3)
