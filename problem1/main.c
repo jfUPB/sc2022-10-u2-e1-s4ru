@@ -38,9 +38,9 @@ void getArray(struct array *parr)
 {
       char tam1[16]; //entrada del tamaño 
       char tam2[16]; //entrada de los numeros
-    if(fgets(7,stdin) != NULL)
+    if(fgets(tam1,6,stdin) != NULL)
     {
-        tam1[strlen(tam1)-1 =1];
+        tam1[strlen(tam1)-1 =0];
     }
     int cambio1 = sscanf(tam1, "%d", &parr->size);
 
@@ -55,7 +55,7 @@ void getArray(struct array *parr)
     }
 }
 
-void arrayCommon(struct array *arregloIn1, struct array *arregloIn2, struct array *arregloOut)
+void arrayCommon(struct array *arregloIn1, sstruct array *arregloIn2, struct array *arregloOut)
 {
     int size;
     arregloOut->size = 0; 
