@@ -42,6 +42,7 @@ void getArray(struct array *parr)
     {
         tam1[strlen(tam1)-1 =1];
     }
+    int cambio1 = sscanf(tam1, "%d", &parr->size);
 }
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
