@@ -38,11 +38,21 @@ void getArray(struct array *parr)
 {
       char tam1[16]; //entrada del tamaño 
       char tam2[16]; //entrada de los numeros
-    if(fgets(6,stdin) != NULL)
+    if(fgets(7,stdin) != NULL)
     {
         tam1[strlen(tam1)-1 =1];
     }
     int cambio1 = sscanf(tam1, "%d", &parr->size);
+
+    parr->pdata = malloc(sizeof(int)*parr->size); 
+
+    for(int k = 0; k < parr -> size;k++)
+    {
+    if (fgets(tam2,6,stdin) != NULL) //orden del teclado datos arreglo
+    {
+    int cambio2 = sscanf(tam2, "%d", parr->pdata+k); //cambio de caracter a integer
+    }
+    }
 }
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
