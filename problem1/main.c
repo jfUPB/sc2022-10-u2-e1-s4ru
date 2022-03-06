@@ -73,7 +73,15 @@ void arrayCommon(struct array *arregloIn1, sstruct array *arregloIn2, struct arr
     {
         size = arregloIn2->size;
     }
-}
+     int cambio[size];
+
+    for(int vari1 = 0; vari1<size; vari1++) 
+    { 
+        cambio[vari1]=-1;
+    } 
+
+    
+   
 
 void freeMemory(struct array *arr1, struct array *arr2, struct array *arr3)
 {
