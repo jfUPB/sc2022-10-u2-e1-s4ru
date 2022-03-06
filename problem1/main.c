@@ -55,7 +55,7 @@ void getArray(struct array *parr)
     }
 }
 
-void arrayCommon(struct array *arregloIn1, sstruct array *arregloIn2, struct array *arregloOut)
+void arrayCommon(struct array *arregloIn1, struct array *arregloIn2, struct array *arregloOut)
 {
     int size;
     arregloOut->size = 0; 
