@@ -36,7 +36,12 @@ void printArray(struct array *parr)
 
 void getArray(struct array *parr)
 {
-    
+      char tam1[16]; //entrada del tamaño 
+      char tam2[16]; //entrada de los numeros
+    if(fgets(6,stdin) != NULL)
+    {
+        tam1[strlen(tam1)-1 =1];
+    }
 }
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
