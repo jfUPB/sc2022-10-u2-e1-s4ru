@@ -79,9 +79,35 @@ void arrayCommon(struct array *arregloIn1, struct array *arregloIn2, struct arra
     { 
         cambio[vari1]=-1;
     } 
+int k=0;
 
+    for(int vari1=0; vari1<arregloIn1->size;vari1++)
+    {
+        for(int vari2=0; vari2<arregloIn2->size;vari2++)
+        {
+            if(arregloIn1->pdata[vari1]==arregloIn2->pdata[vari2]) 
+            {
+                int condi = 0;
+                for(int vari3=0; vari3<size; vari3++)
+                {
+                    if(arregloIn1->pdata[vari1]==cambio[vari3])
+                    {
+                        vari3 = size;
+                        condi = 1;
+                    }
+                }
+                if(condi==0)
+                {
+                    cambio[k] = arregloIn2->pdata[vari2];
+                    k++;
+                    arregloOut->size++;
+                }
+            }
+        }
+    }
     
-   
+}
+
 
 void freeMemory(struct array *arr1, struct array *arr2, struct array *arr3)
 {
