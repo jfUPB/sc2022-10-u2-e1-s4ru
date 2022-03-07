@@ -38,7 +38,7 @@ void getArray(struct array *parr)
 {
       char tam1[16]; //entrada del tamaño 
       char tam2[16]; //entrada de los numeros
-    if(fgets(tam1,6,stdin) != NULL)
+    if(fgets(tam1,5,stdin) != NULL)
     {
         tam1[strlen(tam1)-1 =0];
     }
@@ -48,7 +48,7 @@ void getArray(struct array *parr)
 
     for(int k = 0; k < parr -> size;k++)
     {
-    if (fgets(tam2,6,stdin) != NULL) //orden del teclado datos arreglo
+    if (fgets(tam2,5,stdin) != NULL) //orden del teclado datos arreglo
     {
     int cambio2 = sscanf(tam2, "%d", parr->pdata+k); //cambio de caracter a integer
     }
@@ -105,7 +105,12 @@ int k=0;
             }
         }
     }
+        arregloOut->pdata = malloc(sizeof(int)*arregloOut->size);
     
+    for(int vari1 = 0; vari1<arregloOut->size;vari1++)
+    {
+        *(arregloOut->pdata+vari1) = cambio[vari1];
+    }
 }
 
 
