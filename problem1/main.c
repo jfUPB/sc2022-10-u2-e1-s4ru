@@ -40,17 +40,17 @@ void getArray(struct array *parr)
       char tam2[16]; //entrada de los numeros
     if(fgets(tam1,5,stdin) != NULL)
     {
-        tam1[strlen(tam1)-1 =0];
+        tam1[strlen(tam1)-1 ] = 0;
     }
     int cambio1 = sscanf(tam1, "%d", &parr->size);
 
     parr->pdata = malloc(sizeof(int)*parr->size); 
 
-    for(int k = 0; k < parr -> size;k++)
+    for(int i = 0; i < parr -> size;i++)
     {
     if (fgets(tam2,5,stdin) != NULL) //orden del teclado datos arreglo
     {
-    int cambio2 = sscanf(tam2, "%d", parr->pdata+k); //cambio de caracter a integer
+    int cambio2 = sscanf(tam2, "%d", parr->pdata+i); //cambio de caracter a integer
     }
     }
 }
@@ -79,7 +79,7 @@ void arrayCommon(struct array *arregloIn1, struct array *arregloIn2, struct arra
     { 
         cambio[vari1]=-1;
     } 
-int k=0;
+int i=0;
 
     for(int vari1=0; vari1<arregloIn1->size;vari1++)
     {
@@ -98,8 +98,8 @@ int k=0;
                 }
                 if(condi==0)
                 {
-                    cambio[k] = arregloIn2->pdata[vari2];
-                    k++;
+                    cambio[i] = arregloIn2->pdata[vari2];
+                    i++;
                     arregloOut->size++;
                 }
             }
