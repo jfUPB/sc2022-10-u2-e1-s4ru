@@ -36,13 +36,83 @@ void printArray(struct array *parr)
 
 void getArray(struct array *parr)
 {
-    
+      char tam1[16];
+      char tam2[16]; 
+    if(fgets(tam1,5,stdin) != NULL)
+    {
+        tam1[strlen(tam1)-1 ] = 0;
+    }
+    int cambio1 = sscanf(tam1, "%d", &parr->size);
+
+    parr->pdata = malloc(sizeof(int)*parr->size); 
+
+    for(int i = 0; i < parr -> size;i++)
+    {
+    if (fgets(tam2,5,stdin) != NULL) 
+    {
+    int cambio2 = sscanf(tam2, "%d", parr->pdata+i);
+    }
+    }
 }
 
-void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
+void arrayCommon(struct array *arregloIn1, struct array *arregloIn2, struct array *arregloOut)
 {
+    int size;
+    arregloOut->size = 0; 
+
+
+    if(arregloIn1->size>arregloIn2->size)
+    {
+        size = arregloIn1->size;
+    }
+    else if(arregloIn2->size>arregloIn1->size)
+    {
+        size = arregloIn2->size;
+    }
+    else if(arregloIn2->size == arregloIn1->size)
+    {
+        size = arregloIn2->size;
+    }
+     int cambio[size];
+
+    for(int vari1 = 0; vari1<size; vari1++) 
+    { 
+        cambio[vari1]=-1;
+    } 
+int i=0;
+
+    for(int vari1=0; vari1<arregloIn1->size;vari1++)
+    {
+        for(int vari2=0; vari2<arregloIn2->size;vari2++)
+        {
+            if(arregloIn1->pdata[vari1]==arregloIn2->pdata[vari2]) 
+            {
+                int condi = 0;
+                for(int vari3=0; vari3<size; vari3++)
+                {
+                    if(arregloIn1->pdata[vari1]==cambio[vari3])
+                    {
+                        vari3 = size;
+                        condi = 1;
+                    }
+                }
+                if(condi==0)
+                {
+                    cambio[i] = arregloIn2->pdata[vari2];
+                    i++;
+                    arregloOut->size++;
+                }
+            }
+        }
+    }
+        arregloOut->pdata = malloc(sizeof(int)*arregloOut->size);
     
+    for(int vari1 = 0; vari1<arregloOut->size;vari1++)
+    {
+        *(arregloOut->pdata+vari1) = cambio[vari1];
+    }
 }
+
 
 void freeMemory(struct array *arr1, struct array *arr2, struct array *arr3)
 {
